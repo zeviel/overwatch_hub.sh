@@ -3,6 +3,6 @@ Web-API for [overwatch hub](https://vk.com/owhub) an vk service to watch screens
 
 ## Example
 ```bash
-source overwatch_hub.sh
+source ./overwatch_hub.sh
 authenticate "sign" "vk_user_id" "vk_ts" "vk_ref"
 ```
