@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -28,27 +29,27 @@ function load_wall() {
 	# 1 - page: (string): <page>
 	curl --request GET \
 		--url "$api?act=loadWall&page=$1&$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json"
 }
 
 function start_app() {
 	curl --request GET \
 		--url "$api?act=startapp&&$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json"
 }
 
 function get_game_profile() {
 	curl --request GET \
 		--url "$api?act=db.GetGameProfile&&$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" 
 }
 
 function get_team_mates_profile() {
 	curl --request GET \
 		--url "$api?act=teammates.getProfile&&$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json"
 }
